@@ -1,17 +1,18 @@
-var TITLE = 'シンプルローグライク';
+"use strict"
 
-var TEXT_START = 'はじめる';
+const TITLE = "-Number Plate-";
+const TEXT_START = "start";
 
-var SCREEN_X = 1600;
-var SCREEN_Y = 800;
+const SCREEN_X = 1600;
+const SCREEN_Y = 800;
 
-var startf = false;
+let startf = false;
 
 $(function(){
-	var canvas = document.getElementById('game');
-	var con = canvas.getContext('2d');
+	let canvas = document.getElementById("game");
+	let con = canvas.getContext("2d");
 
-	var c = $('body');
+	let c = $('body');
 	c.on('keydown', function (e) {
 		if (!startf) {
 			if (e.keyCode === 90) {
@@ -33,13 +34,13 @@ function init () {
 }
 
 function draw (con) {
-	con.fillStyle = 'black';
+	con.fillStyle = "black";
 	con.fillRect(0, 0, SCREEN_X, SCREEN_Y);
 
 	if (!startf) {
-		con.textBaseline = 'alphabetic';
-		con.textAlign = 'center';
-		con.fillStyle = 'white';
+		con.textBaseline = "alphabetic";
+		con.textAlign = "center";
+		con.fillStyle = "white";
 
 		con.font = "48px consolas";
 		con.fillText(TITLE, SCREEN_X / 2, SCREEN_Y / 4);
